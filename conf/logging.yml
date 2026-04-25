@@ -1,0 +1,18 @@
+version: 1
+disable_existing_loggers: false
+formatters:
+  standard:
+    format: "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: standard
+loggers:
+  eu_energy_intelligence:
+    level: INFO
+    handlers: [console]
+    propagate: false
+root:
+  level: INFO
+  handlers: [console]

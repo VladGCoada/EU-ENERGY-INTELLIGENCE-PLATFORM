@@ -1,0 +1,22 @@
+name: gold_renewable_stability
+owner: vlad
+sla_minutes: 120
+fields:
+  - name: country_code
+    type: string
+    nullable: false
+  - name: total_generation
+    type: double
+    nullable: true
+  - name: avg_generation
+    type: double
+    nullable: true
+  - name: max_generation
+    type: double
+    nullable: true
+  - name: min_generation
+    type: double
+    nullable: true
+  - name: volatility_index
+    type: double
+    nullable: true

@@ -1,0 +1,25 @@
+"""Production schemas imported from the extension monolith."""
+
+from eu_energy_intelligence.extension_bridge import (
+    DORA_INCIDENT_SCHEMA,
+    DQ_STATS_SCHEMA,
+    ENTSOE_FLOW_SCHEMA,
+    ENTSOE_GENERATION_SCHEMA,
+    ENTSOE_LOAD_SCHEMA,
+    ENTSOE_PRICE_SCHEMA,
+    GDPR_ERASURE_SCHEMA,
+    PIPELINE_RUN_SCHEMA,
+    REGIME_SIGNAL_SCHEMA,
+)
+
+__all__ = [
+    "DORA_INCIDENT_SCHEMA",
+    "DQ_STATS_SCHEMA",
+    "ENTSOE_FLOW_SCHEMA",
+    "ENTSOE_GENERATION_SCHEMA",
+    "ENTSOE_LOAD_SCHEMA",
+    "ENTSOE_PRICE_SCHEMA",
+    "GDPR_ERASURE_SCHEMA",
+    "PIPELINE_RUN_SCHEMA",
+    "REGIME_SIGNAL_SCHEMA",
+]

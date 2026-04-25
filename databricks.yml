@@ -1,0 +1,7 @@
+bundle:
+  name: emit
+
+targets:
+  dev:
+    mode: development
+    default: true

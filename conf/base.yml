@@ -1,0 +1,16 @@
+env: base
+catalog: emit
+schemas:
+  bronze: bronze
+  silver: silver
+  gold: gold
+  ops: ops
+  dq: dq
+  compliance: compliance
+countries:
+  - NL
+  - DE
+  - DK-1
+  - DK-2
+raw_data_dir: ./data/raw
+processed_data_dir: ./data/processed

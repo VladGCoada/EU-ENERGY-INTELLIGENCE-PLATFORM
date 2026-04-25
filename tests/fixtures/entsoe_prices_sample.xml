@@ -1,0 +1,10 @@
+<Document>
+  <TimeSeries>
+    <Period>
+      <Point>
+        <position>1</position>
+        <price.amount>85.0</price.amount>
+      </Point>
+    </Period>
+  </TimeSeries>
+</Document>

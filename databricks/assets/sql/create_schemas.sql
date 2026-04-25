@@ -1,0 +1,4 @@
+CREATE SCHEMA IF NOT EXISTS emit_dev.bronze;
+CREATE SCHEMA IF NOT EXISTS emit_dev.silver;
+CREATE SCHEMA IF NOT EXISTS emit_dev.gold;
+CREATE SCHEMA IF NOT EXISTS emit_dev.platinum;

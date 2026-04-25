@@ -1,0 +1,4 @@
+targets:
+  test:
+    workspace:
+      host: ${env.DATABRICKS_HOST}

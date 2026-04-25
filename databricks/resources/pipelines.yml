@@ -1,0 +1,5 @@
+resources:
+  pipelines:
+    emit_dlt_pipeline:
+      name: emit-dlt-pipeline
+      target: dev

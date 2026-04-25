@@ -1,0 +1,16 @@
+name: bronze_generation_load
+owner: vlad
+sla_minutes: 60
+fields:
+  - name: zone
+    type: string
+    nullable: false
+  - name: timestamp_utc
+    type: string
+    nullable: false
+  - name: quantity
+    type: double
+    nullable: true
+  - name: source_file
+    type: string
+    nullable: false

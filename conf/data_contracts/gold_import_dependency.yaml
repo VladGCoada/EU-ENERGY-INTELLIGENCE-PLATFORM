@@ -1,0 +1,16 @@
+name: gold_import_dependency
+owner: vlad
+sla_minutes: 120
+fields:
+  - name: zone
+    type: string
+    nullable: false
+  - name: imports_mw
+    type: double
+    nullable: true
+  - name: demand_mw
+    type: double
+    nullable: true
+  - name: import_dependency_ratio
+    type: double
+    nullable: true

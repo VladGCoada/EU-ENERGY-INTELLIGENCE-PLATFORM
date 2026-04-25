@@ -1,0 +1,6 @@
+bundle:
+  name: eu-energy-intelligence
+
+include:
+  - resources/*.yml
+  - targets/*.yml

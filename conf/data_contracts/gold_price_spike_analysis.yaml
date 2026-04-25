@@ -1,0 +1,13 @@
+name: gold_price_spike_analysis
+owner: vlad
+sla_minutes: 120
+fields:
+  - name: zone
+    type: string
+    nullable: false
+  - name: price_eur_mwh
+    type: double
+    nullable: true
+  - name: is_price_spike
+    type: boolean
+    nullable: false

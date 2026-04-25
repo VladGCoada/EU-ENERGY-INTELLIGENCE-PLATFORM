@@ -1,0 +1,14 @@
+<GL_MarketDocument xmlns="urn:iec62325.351:tc57wg16:451-6:generationloaddocument:3:0">
+  <TimeSeries>
+    <Period>
+      <Point>
+        <position>1</position>
+        <quantity>10.0</quantity>
+      </Point>
+      <Point>
+        <position>2</position>
+        <quantity>20.0</quantity>
+      </Point>
+    </Period>
+  </TimeSeries>
+</GL_MarketDocument>

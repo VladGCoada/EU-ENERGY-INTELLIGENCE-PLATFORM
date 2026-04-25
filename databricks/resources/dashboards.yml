@@ -1,0 +1,4 @@
+resources:
+  dashboards:
+    renewable_stability:
+      display_name: Renewable Stability Dashboard

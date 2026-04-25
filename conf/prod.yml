@@ -1,0 +1,11 @@
+env: prod
+catalog: emit_prod
+schemas:
+  bronze: bronze
+  silver: silver
+  gold: gold
+  ops: ops
+  dq: dq
+  compliance: compliance
+raw_data_dir: ./data/raw
+processed_data_dir: ./data/processed

@@ -1,0 +1,16 @@
+name: silver_energy_timeseries
+owner: vlad
+sla_minutes: 90
+fields:
+  - name: zone
+    type: string
+    nullable: false
+  - name: timestamp_utc
+    type: string
+    nullable: false
+  - name: generation_mw
+    type: double
+    nullable: true
+  - name: renewable_share_pct
+    type: double
+    nullable: true

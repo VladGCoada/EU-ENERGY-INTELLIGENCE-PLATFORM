@@ -1,0 +1,6 @@
+resources:
+  clusters:
+    default_cluster:
+      cluster_name: emit-default
+      spark_version: 14.3.x-scala2.12
+      num_workers: 1

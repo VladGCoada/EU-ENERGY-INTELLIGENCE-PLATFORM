@@ -1,0 +1,8 @@
+resources:
+  jobs:
+    emit_pipeline_job:
+      name: emit-pipeline-job
+      tasks:
+        - task_key: run_pipeline
+          spark_python_task:
+            python_file: ../src/eu_energy_intelligence/cli.py
