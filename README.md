@@ -1,8 +1,6 @@
-# EU Energy Intelligence Platform
-
 EU Energy Intelligence Platform is a modular data and intelligence project for working with European electricity market data from ENTSO-E.
 
-At a simple level, it can:
+At a simple level, WHAT DOES IT DO ?
 
 - fetch power market data with an ENTSO-E API key
 - clean and organize that data into Bronze, Silver, Gold, and Platinum layers
@@ -11,32 +9,22 @@ At a simple level, it can:
 - run anomaly detection and forecasting
 - backtest price forecasts against real historical prices
 
-This repo is designed to be useful to both technical and non-technical users.
-
-## What This Project Can Tell You
-
-The platform can help answer questions like:
+  What this project can tell you!!!!!!!!!!!!!!!!!!!!!
 
 - What happened in a market during a given period?
-- Which days were volatile, stressed, or unusual?
 - How did prices, generation, load, and flows behave together?
-- Are there signs of anomalies or regime shifts?
 - Can a forecast trained on historical data predict a future period reasonably well?
 - Is the data complete enough to trust the intelligence output?
 
-Examples of outputs:
+Examples of outputs:->>>>>>>>>>>>>>>>
 
 - daily renewable stability summaries
 - price spike analysis
-- market stress reports
 - anomaly scores
 - scenario simulations
 - recommendations
 - Prophet-based backtests
 
-## Who Can Use This Repo
-
-### Non-technical users
 
 You can use the command-line examples in this README to:
 
@@ -46,16 +34,12 @@ You can use the command-line examples in this README to:
 - probe whether a zone and period have enough data
 - run a forecast backtest
 
-### Data analysts
-
 You can use the processed JSON outputs in `data/processed/...` to:
 
 - inspect daily market behavior
 - compare actual vs predicted prices
 - review anomaly outputs
 - build notebooks and charts on top of the Gold and ML outputs
-
-### Data engineers
 
 You can use the codebase to:
 
@@ -64,16 +48,12 @@ You can use the codebase to:
 - replace local JSON storage with more production-oriented storage
 - integrate with Databricks, MLflow, or scheduled pipelines
 
-### ML / forecasting users
-
 You can use the project to:
 
 - run local anomaly scoring
 - run Prophet-based price backtests
 - compare fallback forecasting vs Prophet
 - extend the model with more regressors such as load, generation, and flows
-
-## Architecture
 
 The project follows a layered architecture:
 
@@ -93,8 +73,6 @@ Main package areas:
 - `src/eu_energy_intelligence/quality`: contracts and DQ validation
 - `src/eu_energy_intelligence/intelligence`: anomaly scoring, forecasting, backtesting, reports, scenarios
 - `src/eu_energy_intelligence/orchestration`: local, production, and 2030-style orchestration
-
-## Technologies Used
 
 The project is mainly built in **Python**, with a structure that works both as a local analytics project and as a foundation for a more production-style data platform.
 
@@ -121,9 +99,7 @@ Some of the main technologies used here are:
 
 The repo also includes scaffolding for technologies that are common in more production-focused data platforms, such as **Databricks-style job packaging**, **lakehouse / medallion patterns**, and **infrastructure-oriented setup** for future expansion.
 
-## Setup
 
-### Recommended Python version
 
 Use Python `3.11`.
 
@@ -133,7 +109,6 @@ Why:
 - the active `3.14` interpreter in this workspace did not have the ML dependencies installed
 - `prophet` support is much more practical here under `3.11`
 
-### Install
 
 Create and activate a virtual environment, then install:
 
@@ -157,8 +132,6 @@ You can also install from:
 pip install -r requirements.txt
 ```
 
-## ENTSO-E API Key
-
 This project expects an ENTSO-E API key in the environment as:
 
 ```powershell
@@ -173,9 +146,7 @@ ENTSOE_API_KEY=your_key_here
 
 The repo does not require you to commit secrets.
 
-## Quick Start
 
-### 1. Run a local live generation pipeline
 
 Example for the Netherlands:
 
@@ -190,14 +161,12 @@ python -m eu_energy_intelligence.orchestration.run_bronze `
 
 This produces Bronze, Silver, and Gold outputs locally.
 
-### 2. Inspect whether your inputs are complete enough for intelligence
 
 ```powershell
 python -m eu_energy_intelligence.cli inspect-intelligence-inputs `
   --processed-base-dir data/processed/nl_recent
 ```
 
-### 3. Probe whether ENTSO-E has overlapping datasets for a period
 
 Example for Romania and Hungary:
 
@@ -211,7 +180,6 @@ python -m eu_energy_intelligence.cli probe-entsoe-overlap `
 
 This checks whether prices, load, generation, and flows all exist for the same period.
 
-### 4. Run local ML
 
 ```powershell
 python -m eu_energy_intelligence.cli run-local-ml `
@@ -226,7 +194,6 @@ Depending on the environment and available data, this will use:
 - Prophet for price forecasting when `prophet` is installed and price history is present
 - deterministic fallbacks when those are unavailable
 
-### 5. Run a Prophet backtest
 
 Example: train on 2024 and evaluate October 2025 for `NL`
 
@@ -245,93 +212,3 @@ This writes:
 - prediction rows
 - summary metrics such as `MAE`, `RMSE`, `MAPE`, `SMAPE`
 - an MLflow run when MLflow is available
-
-## Example User Paths
-
-### If you are a market analyst
-
-Use the repo to:
-
-- fetch a zone and date range
-- inspect Gold outputs
-- run a backtest
-- compare actual and predicted prices
-
-Good commands:
-
-- `run_bronze --live ...`
-- `inspect-intelligence-inputs`
-- `run-local-ml`
-- `backtest-price-forecast`
-
-### If you are a hiring manager or non-technical reviewer
-
-This repo demonstrates:
-
-- real external API integration
-- layered data engineering design
-- quality, contracts, and observability
-- ML and forecasting workflows
-- explainable intelligence outputs instead of only raw ETL
-
-### If you are a developer
-
-You can extend:
-
-- zone coverage
-- additional flow corridors
-- richer Gold and Platinum outputs
-- better regressors for Prophet
-- new models beyond Prophet and `IsolationForest`
-
-## Current ML Status
-
-The repo now supports:
-
-- local feature generation
-- local anomaly scoring
-- Prophet forecasting
-- MLflow-backed forecast backtests
-
-What this means practically:
-
-- the ML architecture is implemented
-- the ML workflow is runnable
-- the quality of forecasts still depends on the training window, zone, and available regressors
-
-In other words, the platform can now test forecasting honestly, not just expose forecast classes.
-
-## Important Notes
-
-- Some commands use local JSON outputs rather than a full production lakehouse setup.
-- The local pipeline is strong for experimentation and prototyping.
-- A forecast being runnable does not mean it is automatically good; the repo includes backtesting so forecast quality can be measured directly.
-- Some intelligence outputs become weaker if only one dataset is present and others are missing.
-
-## Running Tests
-
-```powershell
-pytest -q
-```
-
-## Main Config Files
-
-- `pyproject.toml`
-- `requirements.txt`
-- `.env.example`
-- `conf/base.yml`
-- `conf/dev.yml`
-- `conf/data_contracts/*.yaml`
-
-## Documentation
-
-- `docs/architecture.md`
-- `docs/data_model.md`
-- `docs/operations_runbook.md`
-- `docs/data_dictionary.md`
-
-## GitHub
-
-Repository:
-
-- `https://github.com/VladGCoada/EU-ENERGY-INTELLIGENCE-PLATFORM`
